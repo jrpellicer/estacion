@@ -48,6 +48,8 @@ Si no apareciera este tipo de tarjeta, habría que modificar las *Preferencias* 
 
 Se compila el programa *estacion.ino* y se pasa a la placa.
 
+**Importante:**. En el programa *estacion.ino* hay que cambiar la dirección IP del Broker MQTT.
+
 ## Preparación de la Raspberry Pi
 
 Es necesaria una Raspberry Pi con Raspbian configurado con una IP estática y Docker instalado.
@@ -118,6 +120,10 @@ Una vez dentro del entorno de NodeRed hay que instalar una extensión para poder
 
 Una vez instalada hay que importar el flow *estacion.json*.
 
+**Importante:**
+- Se debe entrar en el nodo de Mysql y cambiar la configuración con las credenciales de acceso y la dirección IP del servidor MySQL.
+- Hay que configurar también el nodo MQTT para cambiar la dirección del Broker MQTT. En ambos casos hay que poner la IP de la Raspberry Pi
+
 Finalmente, hay que pulsar sobre *Deploy*.
 
 ### Instalación de Apache y PHP
@@ -129,6 +135,9 @@ Se crea el directorio necesario para almacenar la página web en una carpeta loc
         mkdir ~/estacion/htdocs
 
 Se copia el fichero *index.php* dentro de ~/estacion/htdocs
+
+
+**Importante:**. Con un editor de texto se debe editar el dichero *index.php* y cambiar la configuración con las credenciales de acceso y la dirección IP del servidor MySQL.
 
 Se instala y ejecuta el contenedor:
 
