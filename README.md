@@ -106,11 +106,11 @@ NodeRED se instala también en un contenedor.
 
 Como paso previo a la instalación hay que crear un directorio de trabajo para el almacenamiento persistente de los datos del contenedor:
 
-        mkdir estacion/node-red p
+        mkdir ~/estacion/node-red p
 
 Se ejecuta el contenedor:
 
-        docker run -d -p 1880:1880 --name nodered -v /home/pi/estacion/node-red:/data nodered/node-red
+        docker run -d -p 1880:1880 --name nodered -v ~/estacion/node-red:/data nodered/node-red
 
 Para acceder al entorno de trabajo, hay que abrir un navegador y acceder a la dirección de la Raspberry pi por el puerto 1880
 
@@ -132,7 +132,7 @@ Se copia el fichero *index.php* dentro de ~/estacion/htdocs
 
 Se instala y ejecuta el contenedor:
 
-        docker run --name apache -d -p 80:80 -v /home/pi/estacion/htdocs:/var/www/html php:apache
+        docker run --name apache -d -p 80:80 -v ~/estacion/htdocs:/var/www/html php:apache
 
 Es necesario instalar la extensión de PHP para acceder a base de datos MySQL. Para ello hay que ejecutar 3 comandos dentro del contenedor. Se puede hacer desde fuera del contenedor con la función exec de Docker:
 
